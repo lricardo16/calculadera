@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>0 Rodas: Calculadera</title>
+
+<script>
+function somar(){
+	var valor1 = parseFloat (document.Calculadera.valor1.value);
+	var valor2 = parseFloat (document.Calculadera.valor2.value);
+	
+	var result = valor1+valor2;
+	document.Calculadera.resultado.value = result;
+	if (document.Calculadera.resultado.value == 'NaN'){
+		document.Calculadera.resultado.value = '';
+		alert ('Sabe a diferença de letras e números? YOU.VALUE = "no0b"');	
+	}
+}
+function subtrair(){
+	var valor1 = parseFloat (document.Calculadera.valor1.value);
+	var valor2 = parseFloat (document.Calculadera.valor2.value);
+	var result = valor1-valor2;
+	document.Calculadera.resultado.value = result;
+	if (document.Calculadera.resultado.value == 'NaN'){
+		document.Calculadera.resultado.value = '';
+		alert ('Sabe a diferença de letras e números? YOU.VALUE = "no0b"');
+	}
+}
+function multiplicar(){
+	var valor1 = parseFloat (document.Calculadera.valor1.value);
+	var valor2 = parseFloat (document.Calculadera.valor2.value);
+	var result = valor1*valor2;
+	document.Calculadera.resultado.value = result;
+	if (document.Calculadera.resultado.value == 'NaN'){
+		document.Calculadera.resultado.value = '';
+		alert ('Sabe a diferença de letras e números? YOU.VALUE = "no0b"');
+	}
+}
+function dividir(){
+	var valor1 = parseFloat (document.Calculadera.valor1.value);
+	var valor2 = parseFloat (document.Calculadera.valor2.value);
+	if (valor2 == 0){		
+		alert ('Por obséquio, o algarismo indo-arábico "0" não corresponde a um divisor válido. Se não for muito incomodo para vossa senhoria, digite um númerio válido.');
+		document.Calculadera.resultado.value = '';
+	}else{
+		var result = valor1/valor2;
+		document.Calculadera.resultado.value = result;
+	}
+	
+	if (document.Calculadera.resultado.value == 'NaN'){
+		document.Calculadera.resultado.value = '';
+		alert ('Sabe a diferença de letras e números? YOU.VALUE = "no0b"');
+	}
+	
+}
+function sorteia(buton){
+	if (buton == 1){
+	document.Calculadera.valor1.value = Math.round(Math.random()*100);
+	}
+	if (buton == 2){
+	document.Calculadera.valor2.value = Math.round(Math.random()*100);
+	}
+	
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="CSS.css" />
+</head>
+
+<body>
+<div>
+
+<form name ="Calculadera" > 
+	Valor 1 : <input type="text" name="valor1" /> <input type="button" value="Gerar" class="btnRand" onclick="sorteia(1)"/> <br />
+	Valor 2 : <input type="text" name="valor2" /> <input type="button" value="Gerar" class="btnRand" onclick="sorteia(2)"/> <br />
+    <input type="button" class="btnSomar" value="+" align="left" v onclick="somar()" />
+    <input type="button" class="btnSub" value="-"  onclick="subtrair()" />
+    <input type="button" class="btnMult" value="x"  onclick="multiplicar()" />
+    <input type="button" class="btnDivi" value="/" onclick="dividir()" /><br />
+	resultado = <input type="text" name="resultado" />
+    
+   
+    <br />
+    <input type="hidden" name="position" />
+	
+</form><br />
+</div>
+
+</body>
+</html>
