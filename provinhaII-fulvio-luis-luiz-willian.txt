@@ -1,0 +1,9 @@
+Fulvio Eduardo Ferreira - 8921051
+Luis Ricardo Guabiraba da Silva - 8937402
+Luiz Massao Miyazaki - 8937080
+Willian Gomes de Oliveira - 8922305
+
+floating-mesa-14116.herokuapp.com
+https://github.com/lricardo16/calculadera
+
+Como usar: Calculadora para as 4 operações básicas com 2 valores de entrada, estes podendo ser gerados aleatoriamente.
